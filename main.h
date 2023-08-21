@@ -4,7 +4,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 int _printf(const char *format, ...);
+int _putchr(char c);
 
 #endif
