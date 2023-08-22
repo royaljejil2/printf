@@ -44,12 +44,12 @@ int format_characters(const char *format, va_list args, int count)
 
 int format_string(char *s, int count)
 {
-    while (*s)
-    {
-        _putchr(*s);
-        s++;
-        count++;
-    }
+	while (*s)
+	{
+		_putchr(*s);
+		s++;
+		count++;
+	}
 
-    return count;
+	return (count);
 }
