@@ -38,6 +38,26 @@ int _printf(const char *format, ...)
 					}
 					break;
 				}
+				case 'd':
+				case 'i':
+				{
+					int d = va_arg(args, int);
+					_putint_tochr(d);
+					break;
+				}
+				case 'b':
+				{
+					int dc = va_arg(args, int);
+					int bn = 0, i = 1, r;
+					while (dc != 0) {
+						r = dc % 2;
+						dc /= 2;
+						bn += r * i;
+						i *= 10;
+					}
+					_putint_tochr(bn);
+					break;
+				}
 				case '%':
 				{
 					_putchr('%');
@@ -53,16 +73,8 @@ int _printf(const char *format, ...)
 			_putchr(*format);
 			count++;
 		}
-
 		format++;
 	}
 	va_end(args);
 	return (count);
-}
-int main(void)
-{
-	int num_chars = _printf("Hello, %s! You got %d%%.\n", "Jesse", 100);
-	printf("Number of characters printed: %d\n", num_chars);
-
-	return (0);
 }

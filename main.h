@@ -8,5 +8,6 @@
 
 int _printf(const char *format, ...);
 int _putchr(char c);
+void _putint_tochr(int d);
 
 #endif
