@@ -7,31 +7,28 @@ int format_characters(const char *format, va_list args, int count)
 		case 'c':
 		{
 			char c = (char)va_arg(args, int);
+
 			_putchr(c);
 			count++;
 			break;
 		}
 		case 's':
 		{
-			char *s = va_arg(args, char *);
-			while (*s)
-			{
-				_putchr(*s);
-				s++;
-				count++;
-			}
+			count = format_string(va_arg(args, char *), count);
 			break;
 		}
 		case 'd':
 		case 'i':
 		{
 			int d = va_arg(args, int);
+
 			_putint_tochr(d);
 			break;
 		}
 		case 'b':
 		{
 			int dc = va_arg(args, int);
+
 			_putint_tochr(converttobinary(dc));
 			break;
 		}
@@ -43,4 +40,16 @@ int format_characters(const char *format, va_list args, int count)
 		}
 	}
 	return (count);
+}
+
+int format_string(char *s, int count)
+{
+    while (*s)
+    {
+        _putchr(*s);
+        s++;
+        count++;
+    }
+
+    return count;
 }
