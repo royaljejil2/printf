@@ -1,9 +1,10 @@
 #include "main.h"
 /**
  * format_characters - format specifiers
- * @*format: first argument passed
+ * @format: first argument passed
  * @args: list of arguments passed
  * @count: iterator
+ * Return: count
 */
 int format_characters(const char *format, va_list args, int count)
 {
@@ -47,6 +48,12 @@ int format_characters(const char *format, va_list args, int count)
 	return (count);
 }
 
+/**
+* format_string - format specifiers
+* @s: string passed to function
+* @count: iterator
+* Return: count
+*/
 int format_string(char *s, int count)
 {
 	while (*s)

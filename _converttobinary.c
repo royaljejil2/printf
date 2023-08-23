@@ -7,7 +7,8 @@
 int converttobinary(int dc)
 {
 	int bn = 0, i = 1, r;
-	while (dc != 0) 
+
+	while (dc != 0)
 	{
 		r = dc % 2;
 		dc /= 2;
