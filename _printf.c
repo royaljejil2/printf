@@ -3,8 +3,8 @@
 #include "main.h"
 /**
  * _printf - Custom implementation of printf function.
- * @format: The format string containing conversion specifiers.
- * @...: Arguments to be formatted and printed.
+ * @format: The format string with conversion specifiers.
+ * @...: Arguments passed to the function.
  * Return: The number of characters printed (excluding the null byte).
  */
 int _printf(const char *format, ...)

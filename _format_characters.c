@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * format_characters - format specifiers
+ * @*format: first argument passed
+ * @args: list of arguments passed
+ * @count: iterator
+*/
 int format_characters(const char *format, va_list args, int count)
 {
 	switch (*format)
