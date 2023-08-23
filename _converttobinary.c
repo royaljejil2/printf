@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * converttobinary - function that converts integer to binary
+ * @dc: decimal numner passed to function
+ * Return: binary number
+*/
 int converttobinary(int dc)
 {
 	int bn = 0, i = 1, r;

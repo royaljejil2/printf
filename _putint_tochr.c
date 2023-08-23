@@ -1,5 +1,8 @@
 #include "main.h"
-
+/**
+ * _putint_tochr - convert int to char using _putchar
+ * @d: integer passed to function
+*/
 void _putint_tochr(int d) {
 	if (d < 0) {
 		_putchr('-');
