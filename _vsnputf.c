@@ -17,9 +17,11 @@ int _vsnputf(char *buffer, size_t size, const char *format, va_list args)
 
     while (*ff)
 	{
-        if (*ff == '%') {
+        if (*ff == '%')
+        {
             ff++;
-            switch(*ff) {
+            switch(*ff)
+            {
                 case 'b':
                     dc = va_arg(args, int);
                     flag = 1;
@@ -30,7 +32,8 @@ int _vsnputf(char *buffer, size_t size, const char *format, va_list args)
         }
         ff++;
     }
-    if (flag == 1) {
+    if (flag == 1)
+    {
         return 0;
     } 
 	return vsnprintf(buffer, size, format, args);
