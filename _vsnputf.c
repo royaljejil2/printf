@@ -11,6 +11,7 @@ int _vsnputf(char *buffer, size_t size, const char *format, va_list args)
 {
     int dc;
     const char *ff = format;
+    int flag = 0;
 
     while (*ff)
 	{
@@ -19,6 +20,7 @@ int _vsnputf(char *buffer, size_t size, const char *format, va_list args)
             switch(*ff) {
                 case 'b':
                     dc = va_arg(args, int);
+                    flag = 1;
                     _putbinary_tochr(converttobinary(dc));
                     _putchr('\n');
                     break;
@@ -26,6 +28,9 @@ int _vsnputf(char *buffer, size_t size, const char *format, va_list args)
         }
         ff++;
     }
+    if (flag == 1) {
+        return 0;
+    } 
 
 	return vsnprintf(buffer, size, format, args);
 }
