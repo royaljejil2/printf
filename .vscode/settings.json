@@ -4,6 +4,10 @@
         "__bit_reference": "c",
         "bitset": "c",
         "unordered_map": "c",
-        "chrono": "c"
+        "chrono": "c",
+        "stdarg.h": "c",
+        "__locale": "c",
+        "cstring": "c",
+        "string.h": "c"
     }
 }

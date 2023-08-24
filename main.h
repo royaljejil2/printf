@@ -12,5 +12,7 @@ void _putint_tochr(int d);
 int format_characters(const char *format, va_list args, int count);
 int converttobinary(int dc);
 int format_string(char *s, int count);
+int _vsnputf(char *buffer, size_t size, const char *format, va_list args);
+void _putbinary_tochr(int d);
 
 #endif
