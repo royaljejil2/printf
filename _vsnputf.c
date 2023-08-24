@@ -2,11 +2,13 @@
 #include <string.h>
 
 /**
- * _putchr - To print a character
- * @c: A char input
- * Return: Always (0)
+ * _vsnputf - prints a formatted string
+ * @buffer: memory allocation
+ * @size: size of buffer
+ * @format: formatted char string
+ * @args: va_list name 
+ * Return: int
  */
-
 int _vsnputf(char *buffer, size_t size, const char *format, va_list args)
 {
     int dc;
@@ -31,6 +33,5 @@ int _vsnputf(char *buffer, size_t size, const char *format, va_list args)
     if (flag == 1) {
         return 0;
     } 
-
 	return vsnprintf(buffer, size, format, args);
 }

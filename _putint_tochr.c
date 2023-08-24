@@ -32,6 +32,10 @@ void _putint_tochr(int d)
 	}
 }
 
+/**
+ * _putbinary_tochr - convert binary to char using _putchar
+ * @d: integer passed to function
+*/
 void _putbinary_tochr(int d)
 {
     int i;
