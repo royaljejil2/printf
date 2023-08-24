@@ -38,22 +38,24 @@ void _putint_tochr(int d)
 */
 void _putbinary_tochr(int d)
 {
-    int i;
-    int dgt[10];
-    int ind = 0;
+	int i;
+	int dgt[10];
+	int ind = 0;
 
-    if (d == 0) {
-        putchar('0');
-        return;
-    }
+	if (d == 0)
+	{
+		putchar('0');
+		return;
+	}
 
-    do {
-        dgt[ind++] = d % 10;
-        d /= 10;
-    } while (d > 0);
+	do {
+	dgt[ind++] = d % 10;
+	d /= 10;
+	} while (d > 0);
 
-    for (i = ind - 1; i >= 0; i--) {
-        _putchr('0' + dgt[i]);
-    }
+	for (i = ind - 1; i >= 0; i--)
+	{
+		_putchr('0' + dgt[i]);
+	}
 }
 

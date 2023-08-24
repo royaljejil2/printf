@@ -9,34 +9,34 @@
  */
 int _printf(const char *format, ...)
 {
-    va_list args;
+	va_list args;
 	int len;
 	int i;
 	char *errorFormatMsg = "Error formatting output\n";
 	char *errorPrintMsg = "Printing error\n";
-	
-    char buffer[1024]; // Buffer to hold formatted output
 
-    va_start(args, format);
-    len = _vsnputf(buffer, sizeof(buffer), format, args);
+	char buffer[1024]; /* Buffer to hold formatted output*/
 
-    va_end(args);
+	va_start(args, format);
+	len = _vsnputf(buffer, sizeof(buffer), format, args);
 
-    if (len < 0)
-    {
+	va_end(args);
+
+	if (len < 0)
+	{
 		_putchr(*errorFormatMsg);
-        return -1;
-    }
+		return (-1);
+	}
 
 	for (i = 0; i < len; i++)
-    {
-        if (_putchr(buffer[i]) == EOF)
-        {
-            _putchr(*errorPrintMsg);
-            return -1;
-        }
-    }
+	{
+		if (_putchr(buffer[i]) == EOF)
+		{
+			_putchr(*errorPrintMsg);
+			return (-1);
+		}
+	}
 
-    return len;
+	return (len);
 }
 
